@@ -3,9 +3,10 @@
     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
       <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
         <div class="overflow-hidden">
-          <table class="min-w-full text-center">
+          <table class="min-w-full text-center" v-show="isVisible">
             <thead class="border-b">
               <tr>
+                <th>#</th>
                 <th :key="i" v-for="(column, i) in columns">
                   {{ column }}
                 </th>
@@ -20,22 +21,27 @@
                 <td
                   class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
                 >
-                  {{ getValue(name, i) }}
+                  {{ i }}
+                </td>
+                <td
+                  class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                >
+                  {{ getValue("name", i) }}
                 </td>
                 <td
                   class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
                 >
-                  {{ getValue(price, i) }}
+                  {{ getValue("price", i) }}
                 </td>
                 <td
                   class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
                 >
-                  {{ getValue(amount, i) }}
+                  {{ getValue("amount", i) }}
                 </td>
                 <td
                   class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
                 >
-                  Val4
+                  {{ getTotalCost(i) }}
                 </td>
               </tr>
             </tbody>
@@ -61,6 +67,7 @@ export default {
       names: "getRandomNames",
       prices: "getRandomPrices",
       amounts: "getRandomAmounts",
+      isVisible: "getTableVisibility",
     }),
   },
   methods: {
@@ -78,7 +85,9 @@ export default {
         default:
           break;
       }
-      return this.names[i];
+    },
+    getTotalCost(i) {
+      return (this.prices[i] * this.amounts[i]).toFixed(2);
     },
   },
 };

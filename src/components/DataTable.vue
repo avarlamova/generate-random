@@ -44,6 +44,29 @@
                   {{ getTotalCost(i) }}
                 </td>
               </tr>
+              <tr class="border-b bg-gray-50 border-gray-200">
+                <td
+                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                >
+                  51
+                </td>
+                <td
+                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                ></td>
+                <td
+                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                ></td>
+                <td
+                  class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap"
+                >
+                  Итого:
+                </td>
+                <td
+                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                >
+                  {{ totalSum }}
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -69,6 +92,13 @@ export default {
       amounts: "getRandomAmounts",
       isVisible: "getTableVisibility",
     }),
+    totalSum() {
+      return this.prices
+        .reduce((r, a, i) => {
+          return r + a * this.amounts[i];
+        }, 0)
+        .toFixed(2);
+    },
   },
   methods: {
     getValue(parameter, i) {

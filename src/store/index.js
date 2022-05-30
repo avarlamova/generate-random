@@ -44,15 +44,9 @@ export default createStore({
         state.randomAmounts.push(amount);
       }
     },
-    refreshData(state) {
-      state.randomNames = [];
-      state.randomAmounts = [];
-      state.randomPrices = [];
-    },
   },
   actions: {
     generateRandomData(context) {
-      context.commit("refreshData");
       context.commit("randomizeData");
     },
   },

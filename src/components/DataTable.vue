@@ -19,50 +19,34 @@
                 class="border-b bg-gray-50 border-gray-200"
               >
                 <td
-                  class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
+                  class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap"
                 >
                   {{ i }}
                 </td>
-                <td
-                  class="text-sm text-gray-900 font-medium px-6 py-4 whitespace-nowrap"
-                >
+                <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
                   {{ getValue("name", i) }}
                 </td>
-                <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                >
+                <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
                   {{ getValue("price", i) }}
                 </td>
-                <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                >
+                <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
                   {{ getValue("amount", i) }}
                 </td>
-                <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                >
+                <td class="text-sm text-gray-900 px-6 py-4 whitespace-nowrap">
                   {{ getTotalCost(i) }}
                 </td>
               </tr>
               <tr class="border-b bg-gray-50 border-gray-200">
-                <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                >
-                  51
-                </td>
-                <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                ></td>
-                <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
-                ></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td
                   class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap"
                 >
                   Итого:
                 </td>
                 <td
-                  class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"
+                  class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap"
                 >
                   {{ totalSum }}
                 </td>

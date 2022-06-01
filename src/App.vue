@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 w-full">
+  <div class="bg-gray-100 w-screen h-screen">
     <GenerateButton />
     <DataTable />
   </div>

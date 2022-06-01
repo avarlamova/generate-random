@@ -1,8 +1,8 @@
 <template>
-  <div class="flex justify-center">
+  <div class="flex flex-col justify-center items-center m-auto">
     <button
       type="button"
-      class="bg-green-600 m-1 p-7 px-6 py-2 rounded-full text-white font-serif text-lg hover:bg-green-700 hover:shadow-lg uppercase"
+      class="bg-green-600 m-6 p-8 px-7 py-3 rounded-full text-white font-serif text-lg hover:bg-green-700 hover:shadow-lg uppercase"
       @click="generate"
     >
       Сгенерировать
